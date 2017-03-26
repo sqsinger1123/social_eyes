@@ -1,0 +1,29 @@
+{
+  "name": "social_eyes",
+  "version": "1.0.0",
+  "description": "Experimental, educational view of your public social profiles",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bower": "^1.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sqsinger1123/social_eyes.git"
+  },
+  "keywords": [
+    "social",
+    "facebook",
+    "visual"
+  ],
+  "author": "Samuel Singer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sqsinger1123/social_eyes/issues"
+  },
+  "homepage": "https://github.com/sqsinger1123/social_eyes#readme"
+}
