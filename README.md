@@ -1,2 +1,3 @@
 # social_eyes
-Educational: Experiment with Facebook web app, user permissions, photos
+An educational experiment, looking closer at your public social profiles:
+featuring Facebook user permissions, photos.
