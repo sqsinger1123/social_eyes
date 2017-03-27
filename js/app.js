@@ -48,10 +48,11 @@ globalConfigs['num_photos'] = 3;
 		$scope.fetchData = function() {
 			FB.api('/me?fields=id,name,email,photos{created_time,name,id,images}', function(response) {
 				$scope.$apply(function() {
+					$scope.fb_data.email = response.email;
+					$scope.fb_data.id = response.id;
+					$scope.fb_data.name = response.name;
 					$scope.fb_data.photos = response.photos.data;
-					console.log($scope.fb_data.photos);
-					$scope.numtest.push(1);
-				})
+				})
 			});
 		}
 
