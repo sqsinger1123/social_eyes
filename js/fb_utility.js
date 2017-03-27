@@ -1,4 +1,5 @@
 
+// The below file remains, albeit inactive, to acknowledge the example given by Facebook for connecting with their Javascript SDK.
 
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
