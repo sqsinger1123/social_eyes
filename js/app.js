@@ -19,9 +19,21 @@ globalConfigs['num_photos'] = 3;
 			var images = angular.copy(photo.images);
 			if(!images || !images.length){ return 'no_photo'; }
 			for(var i = 0; i < images.length; i++) {
-				if(images[i].source) { return images[i].source; }
+				if(images[i].source) { return this.trimProtocol(images[i].source); }
 			}
 		}
+
+		// Remove 'http' or 'https' from URI. Return starting with //, to maintain current protocol.
+		this.trimProtocol = function(inputString) {
+			var portions = inputString.split('//')
+			if(portions.length > 1) {
+				portions.splice(0,1);
+				return portions.join('');
+			} else { // could be implicit since above case contains return
+				return inputString;
+			}
+		}
+
 		return this;
 	});
 
