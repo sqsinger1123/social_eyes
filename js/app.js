@@ -72,7 +72,12 @@ globalConfigs['num_photos'] = 3;
 					$scope.fb_data.email = response.email;
 					$scope.fb_data.id = response.id;
 					$scope.fb_data.name = response.name;
-					$scope.fb_data.photos = response.photos.data;
+					if(response.photos) {
+						$scope.fb_data.photos = response.photos.data;
+					} else {
+						console.log("No photos found!");
+						$scope.fb_data.photos = [];
+					}
 				});
 			});
 		}
