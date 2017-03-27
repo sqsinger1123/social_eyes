@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="socialEyesMaster">
 <head>
-<title>Social Eyes</title>
-<meta charset="UTF-8">
+	<title>Social Eyes</title>
+	<meta charset="UTF-8">
 
-<link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
 
-<script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/node_modules/angular/angular.min.js"></script>
+	<script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/node_modules/angular/angular.min.js"></script>
 
 </head>
-<body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+
+<body ng-controller="socialController as objSoCon">
+	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapsed" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -37,17 +38,19 @@
 			</div>
 		</div>
 	</nav>
+	<div class="container-fluid main-content">
+		<div class="row clearfix">
+			<div class="col-xs-12">
+				<p>Social Eyes: an experimental, educational look into your public social media profiles</p>
+				<p>
+					<div id="status">
+					</div>
+				</p>
+			</div>
+		</div>
+	</div>
 
 <script type="text/javascript" src="/js/fb_utility.js"></script>
-
-<!--
-  Below we include the Login Button social plugin. This button uses
-  the JavaScript SDK to present a graphical Login button that triggers
-  the FB.login() function when clicked.
--->
-
-<div id="status">
-</div>
 
 </body>
 </html>
