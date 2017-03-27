@@ -19,8 +19,7 @@ globalConfigs['num_photos'] = 3;
 			var images = angular.copy(photo.images);
 			if(!images || !images.length){ return 'no_photo'; }
 			for(var i = 0; i < images.length; i++) {
-				console.log(images[i]);
-				if(images[i].source) { return images[i].source; }
+				if(images[i].source) { return images[i].source; }
 			}
 		}
 
