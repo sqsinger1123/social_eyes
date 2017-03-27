@@ -28,7 +28,7 @@ globalConfigs['num_photos'] = 3;
 			var portions = inputString.split('//')
 			if(portions.length > 1) {
 				portions.splice(0,1);
-				return portions.join('');
+				return '//' + portions.join('');
 			} else { // could be implicit since above case contains return
 				return inputString;
 			}
