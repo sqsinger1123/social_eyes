@@ -1,0 +1,12 @@
+
+.fb_photo_container {
+	width: 100%;
+	border: 1px dashed grey;
+}
+.fb_photo_container .inner_photo {
+	width: 100%;
+	background: grey;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
