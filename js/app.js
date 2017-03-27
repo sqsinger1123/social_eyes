@@ -13,6 +13,10 @@ globalConfigs['num_photos'] = 3;
 		return this;
 	});
 
+	app.service('photoService', function($scope) {
+
+	});
+
 	app.controller('socialController', ['$scope', 'facebookAPI', function($scope, facebookAPI) {
 		var obj = this;
 
@@ -88,14 +92,15 @@ globalConfigs['num_photos'] = 3;
 		return this;
 	}]);
 
-	app.directive('fbPhoto', function() {
+	app.directive('fbPhoto', [ function() {
 		return {
 			restrict: 'E',
 			transclude: true,
-			scope: {
-				photo: '@'
+			link: function(scope, element, attrs, contr) {
+				console.log(scope); // passing in an object.
 			},
-		}
-	});
+			template: "<h3>{{photo.name}}</h3>"
+		}
+	}]);
 
 })();
