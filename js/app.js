@@ -52,7 +52,7 @@ globalConfigs['num_photos'] = 3;
 					$scope.fb_data.id = response.id;
 					$scope.fb_data.name = response.name;
 					$scope.fb_data.photos = response.photos.data;
-				})
+				});
 			});
 		}
 
