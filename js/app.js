@@ -85,9 +85,17 @@ globalConfigs['num_photos'] = 3;
 
 		$scope.initializeFB();
 
-		$scope.numtest = [1,2,3,4,5];
-
 		return this;
 	}]);
+
+	app.directive('fbPhoto', function() {
+		return {
+			restrict: 'E',
+			transclude: true,
+			scope: {
+				photo: '@'
+			},
+		}
+	});
 
 })();
