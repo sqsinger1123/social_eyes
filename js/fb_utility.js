@@ -14,8 +14,6 @@
       testAPI();
     } else {
       // The person is not logged into your app or we are unable to tell.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
     }
   }
 
@@ -37,21 +35,11 @@
       version    : 'v2.8' // use graph api version 2.8
     });
 
-    // Now that we've initialized the JavaScript SDK, we call 
-    // FB.getLoginStatus().  This function gets the state of the
-    // person visiting this page and can return one of three states to
-    // the callback you provide.  They can be:
-    //
-    // 1. Logged into your app ('connected')
-    // 2. Logged into Facebook, but not your app ('not_authorized')
-    // 3. Not logged into Facebook and can't tell if they are logged into
-    //    your app or not.
-    //
-    // These three cases are handled in the callback function.
-
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
+    // Commenting this out: the original caller that triggers it all.
+    // Instead, I'd rather call something similar from the controller.
+    // FB.getLoginStatus(function(response) {
+    //   statusChangeCallback(response);
+    // });
 
   };
 
@@ -71,7 +59,5 @@
     FB.api('/me?fields=id,name,email,photos{created_time,name,id,images}', function(response) {
       console.log('Successful login for: ' + response.name);
       console.log('Full response: ', response);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
     });
   }

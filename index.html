@@ -11,7 +11,6 @@
 	<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/node_modules/angular/angular.min.js"></script>
 	<script type="text/javascript" src="/js/app.js"></script>
-	<script type="text/javascript" src="/js/fb_utility.js"></script>
 
 </head>
 
@@ -40,7 +39,10 @@
 			</div>
 		</div>
 	</nav>
+
+
 	<div class="container-fluid main-content">
+		
 		<div class="row clearfix">
 			<div class="col-xs-12">
 				<p>Social Eyes: an experimental, educational look into your public social media profiles</p>
@@ -50,6 +52,12 @@
 				</p>
 			</div>
 		</div>
+		<div class="row clearfix">
+			<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" data-ng-repeat="photo in fb_data.photos">
+				<h3>{{photo.name}}</h3>
+			</div>
+		</div>
+
 	</div>
 
 </body>
