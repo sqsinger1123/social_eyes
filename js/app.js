@@ -22,6 +22,15 @@ globalConfigs['num_photos'] = 3;
 				if(images[i].source) { return images[i].source; }
 			}
 		}
+
+		this.proofName = function(inputString) {
+			if(!inputString || inputString.length < 1) {
+				return '(No title given)';
+			} else { // Could be implicit else, since above contains return. More readable like this?
+				return inputString;
+			}
+		}
+
 		return this;
 	});
 
@@ -106,8 +115,8 @@ globalConfigs['num_photos'] = 3;
 			transclude: true,
 			link: function(scope, element, attrs, contr) {
 				scope.source = photoService.extractImage(scope.photo);
-				return true;
-			},
+				scope.photo.name = photoService.proofName(scope.photo.name)
+			},
 			templateUrl: "/templates/fb_photo.html"
 		}
 	}]);
