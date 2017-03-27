@@ -13,8 +13,16 @@ globalConfigs['num_photos'] = 3;
 		return this;
 	});
 
-	app.service('photoService', function($scope) {
-
+	app.service('photoService', function() {
+		// Naive, quick implementation: grab the first photo available!
+		this.extractImage = function(photo) {
+			var images = angular.copy(photo.images);
+			if(!images || !images.length){ return 'no_photo'; }
+			for(var i = 0; i < images.length; i++) {
+				if(images[i].source) { return images[i].source; }
+			}
+		}
+		return this;
 	});
 
 	app.controller('socialController', ['$scope', 'facebookAPI', function($scope, facebookAPI) {
@@ -92,14 +100,15 @@ globalConfigs['num_photos'] = 3;
 		return this;
 	}]);
 
-	app.directive('fbPhoto', [ function() {
+	angular.module('socialEyesMaster').directive('fbPhoto', ['photoService', function(photoService) {
 		return {
 			restrict: 'E',
 			transclude: true,
 			link: function(scope, element, attrs, contr) {
-				console.log(scope); // passing in an object.
+				scope.source = photoService.extractImage(scope.photo);
+				return true;
 			},
-			template: "<h3>{{photo.name}}</h3>"
+			templateUrl: "/templates/fb_photo.html"
 		}
 	}]);
 
