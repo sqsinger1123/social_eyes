@@ -4,9 +4,23 @@
 	border: 1px dashed grey;
 }
 .fb_photo_container .inner_photo {
-	width: 100%;
+	max-width: 100%;
+	max-height: 500px;
 	background: grey;
 	background-position: center;
 	background-repeat: no-repeat;
+}
+
+.fb_photo_container .popover_title {
+	display: none;
+	transition: .5s;
+	position: absolute;
+	bottom: -50px;
+	background: rgba(55,55,55,.5);
+}
+
+.fb_photo_container:hover .popover_title {
+	display: block;
+	bottom: 0;
 }
 
