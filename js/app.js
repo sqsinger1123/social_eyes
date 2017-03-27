@@ -19,6 +19,7 @@ globalConfigs['num_photos'] = 3;
 			var images = angular.copy(photo.images);
 			if(!images || !images.length){ return 'no_photo'; }
 			for(var i = 0; i < images.length; i++) {
+				console.log(images[i]);
 				if(images[i].source) { return images[i].source; }
 			}
 		}
@@ -116,7 +117,7 @@ globalConfigs['num_photos'] = 3;
 			link: function(scope, element, attrs, contr) {
 				scope.source = photoService.extractImage(scope.photo);
 				scope.photo.name = photoService.proofName(scope.photo.name)
-			},
+			},
 			templateUrl: "/templates/fb_photo.html"
 		}
 	}]);
