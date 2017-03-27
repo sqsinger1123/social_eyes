@@ -52,6 +52,18 @@
 						Want to see which of your Facebook photos are available for public viewing?
 						Log in to Facebook, and we'll show you.
 				</p>
+				<p>
+					Currently logged into Facebook on this page: {{state.fb.logged_in}}.
+					<span ng-show="state.fb.logged_in">
+						<br/>
+						You are logged in as: {{fb_data.name}}. <br/>
+						Your Facebook user_id is: {{fb_data.id}}. <br/>
+						Your email address is: {{fb_data.email}}.
+					</span>
+				</p>
+				<p>
+					Number of photos found: {{fb_data.photos.length}}
+				</p>
 			</div>
 		</div>
 		<div class="row clearfix">
